@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "自动下载并静默安装明日方舟游戏客户端",
   "author": {
-    "name": "latt-tech",
+    "name": "拉特兰技术部",
     "url": "https://github.com/latt-tech"
   },
   "main": "main.lua",
