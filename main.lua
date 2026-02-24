@@ -10,7 +10,7 @@ end
 function plugin.onEnable()
     sl.log.info("明日方舟自动安装器插件已启用")
     
-    local localAppData = os.getenv("LOCALAPPDATA")
+    local localAppData = sl.system.get_env("LOCALAPPDATA")
     if not localAppData then
         sl.log.error("无法获取 LOCALAPPDATA 环境变量")
         return
@@ -26,7 +26,7 @@ function plugin.onEnable()
     end
     
     sl.log.info("开始下载明日方舟安装程序...")
-    local tempDir = os.getenv("TEMP")
+    local tempDir = sl.system.get_env("TEMP")
     if not tempDir then
         sl.log.error("无法获取 TEMP 环境变量")
         return
@@ -52,8 +52,11 @@ function plugin.onEnable()
     
     sl.log.info("安装程序已保存，开始静默安装...")
     
-    local installCommand = "\"" .. installerPath .. "\" /S"
-    os.execute(installCommand)
+    local success, err = sl.system.execute(installerPath, {"/S"})
+    if not success then
+        sl.log.error("执行安装程序失败: " .. tostring(err))
+        return
+    end
     
     sl.log.info("安装程序已启动，等待安装完成...")
     
