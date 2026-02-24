@@ -10,7 +10,7 @@
   "main": "main.lua",
   "icon": "icon.png",
   "repository": "https://github.com/latt-tech/auto-arknights-sealantern.git",
-  "permissions": ["log", "filesystem", "http", "process"],
+  "permissions": ["log", "fs", "network", "execute_program"],
   "ui": {
     "sidebar": {
       "label": "明日方舟",

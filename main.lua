@@ -34,7 +34,7 @@ function plugin.onEnable()
     
     local installerPath = tempDir .. "\\arknights.exe"
     
-    local response, err = sl.http.get(DOWNLOAD_URL)
+    local response, err = sl.network.get(DOWNLOAD_URL)
     if not response then
         sl.log.error("下载失败: " .. tostring(err))
         return
