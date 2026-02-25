@@ -7,10 +7,16 @@
     "name": "拉特兰技术部",
     "url": "https://github.com/latt-tech"
   },
-  "main": "main.lua",
-  "icon": "icon.png",
   "repository": "https://github.com/latt-tech/auto-arknights-sealantern.git",
-  "permissions": ["log", "fs", "network", "execute_program"],
+  "icon": "logo.png",
+  "main": "main.lua",
+  "permissions": [
+    "ui",
+    "log",
+    "fs",
+    "network",
+    "execute_program"
+  ],
   "ui": {
     "sidebar": {
       "label": "明日方舟",
