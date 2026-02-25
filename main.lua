@@ -8,35 +8,35 @@ end
 -- 插件启用时调用
 function onEnable()
     sl.log.info("明日方舟自动安装器插件已启用")
-    -- 显示网易云游戏页面
-    createCloudGameOverlay()
+    -- 显示明日方舟图片
+    createImageOverlay()
 end
 
 -- 插件禁用时调用
 function onDisable()
     sl.log.info("明日方舟自动安装器插件已禁用")
     -- 移除可能存在的覆盖层
-    sl.ui.remove_html("arknights-cloud-game-overlay")
+    sl.ui.remove_html("arknights-image-overlay")
 end
 
 -- 插件卸载时调用
 function onUnload()
     sl.log.info("明日方舟自动安装器插件已卸载")
     -- 移除可能存在的覆盖层
-    sl.ui.remove_html("arknights-cloud-game-overlay")
+    sl.ui.remove_html("arknights-image-overlay")
 end
 
--- 创建网易云游戏全屏覆盖层
-function createCloudGameOverlay()
-    sl.log.info("创建网易云游戏覆盖层")
-    local overlay_id = "arknights-cloud-game-overlay"
+-- 创建明日方舟图片全屏覆盖层
+function createImageOverlay()
+    sl.log.info("创建明日方舟图片覆盖层")
+    local overlay_id = "arknights-image-overlay"
     
     -- 先移除可能存在的旧覆盖层
     sl.ui.remove_html(overlay_id)
     
     -- 注入CSS样式
     local css = [[
-        #arknights-cloud-game-overlay {
+        #arknights-image-overlay {
             position: fixed !important;
             top: 0 !important;
             left: 0 !important;
@@ -53,9 +53,9 @@ function createCloudGameOverlay()
             opacity: 1;
         }
         
-        #arknights-cloud-game-iframe {
-            width: 100% !important;
-            height: 100% !important;
+        #arknights-image {
+            max-width: 80% !important;
+            max-height: 80% !important;
             border: none !important;
         }
         
@@ -82,14 +82,14 @@ function createCloudGameOverlay()
         }
     ]]
     
-    sl.ui.inject_css("arknights-cloud-game-styles", css)
+    sl.ui.inject_css("arknights-image-styles", css)
     sl.log.info("注入CSS样式")
     
-    -- 创建全屏覆盖层，显示网易云游戏
+    -- 创建全屏覆盖层，显示明日方舟图片
     local html = [[
-        <div id="arknights-cloud-game-overlay">
+        <div id="arknights-image-overlay">
             <button id="arknights-close-button" onclick="this.parentElement.remove();">×</button>
-            <iframe id="arknights-cloud-game-iframe" src="https://cg.163.com/static/game/mrfz?sourcepage=mobile&show=mrfz&back=https%3A%2F%2Fcg.163.com%2F%23%2Fmobile%3Ftopic%3D%25E7%2583%25AD%25E9%2597%25A8%25E6%2589%258B%25E6%25B8%25B8"></iframe>
+            <img id="arknights-image" src="logo.png" alt="明日方舟">
         </div>
     ]]
     
@@ -102,8 +102,8 @@ end
 -- 获取插件页面内容
 function getPageContent()
     return [[
-        <div style="width: 100%; height: 100vh; margin: 0; padding: 0; overflow: hidden;">
-            <iframe src="https://cg.163.com/static/game/mrfz?sourcepage=mobile&show=mrfz&back=https%3A%2F%2Fcg.163.com%2F%23%2Fmobile%3Ftopic%3D%25E7%2583%25AD%25E9%2597%25A8%25E6%2589%258B%25E6%25B8%25B8" style="width: 100%; height: 100%; border: none;"></iframe>
+        <div style="width: 100%; height: 100vh; margin: 0; padding: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000000;">
+            <img src="logo.png" alt="明日方舟" style="max-width: 80%; max-height: 80%; border: none;">
         </div>
     ]]
 end
