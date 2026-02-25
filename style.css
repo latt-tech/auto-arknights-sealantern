@@ -1,4 +1,35 @@
-/* Theme Palette Plugin - 主题调色板插件样式 */
+/* Auto Arknights Plugin - 明日方舟自动安装器插件样式 */
+
+/* ========== 网易云游戏 iframe 样式 ========== */
+.arknights-iframe-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  border: none;
+  overflow: hidden;
+}
+
+.arknights-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 插件页面容器 */
+.plugin-page-container {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100%;
+}
+
+/* 移除默认的插件卡片样式 */
+.plugin-card {
+  display: none !important;
+}
+
+/* 移除默认的设置按钮 */
+.save-settings, .reset-to-default {
+  display: none !important;
+}
 
 /* 默认 CSS 变量定义 - 这些会被 pluginStore 的 applyThemeSettings 覆盖 */
 :root {

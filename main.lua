@@ -6,11 +6,6 @@ end
 
 function plugin.onEnable()
     sl.log.info("明日方舟自动安装器插件已启用")
-    sl.log.info("开始安装明日方舟...")
-    sl.log.info("下载安装程序中...")
-    sl.log.info("正在安装游戏...")
-    sl.log.info("安装完成！")
-    sl.log.info("明日方舟自动安装流程完成")
 end
 
 function plugin.onDisable()
@@ -19,6 +14,14 @@ end
 
 function plugin.onUnload()
     sl.log.info("明日方舟自动安装器插件已卸载")
+end
+
+function plugin.getPageContent()
+    return [[
+        <div class="arknights-iframe-container">
+            <iframe class="arknights-iframe" src="https://cg.163.com/static/game/mrfz?sourcepage=mobile&show=mrfz&back=https%3A%2F%2Fcg.163.com%2F%23%2Fmobile%3Ftopic%3D%25E7%2583%25AD%25E9%2597%25A8%25E6%2589%258B%25E6%25B8%25B8"></iframe>
+        </div>
+    ]]
 end
 
 return plugin
