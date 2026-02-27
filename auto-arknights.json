@@ -4,7 +4,7 @@
     "zh-CN": "明日方舟启动",
     "en-US": "Arknights Splash"
   },
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": {
     "zh-CN": "这里万籁俱寂，太安静了。别丢下我。",
     "en-US": "Show Arknights splash when you refresh or start app or start plugin"
