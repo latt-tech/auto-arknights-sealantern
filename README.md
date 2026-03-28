@@ -1,6 +1,10 @@
-# Auto Arknights - SeaLantern 明日方舟自动安装插件
+# Auto Arknights - SeaLantern 明日方舟启动页面插件
 
-一个用于 SeaLantern 的自动安装明日方舟游戏客户端的插件。
+一个用于 SeaLantern 的展示明日方舟启动画面的插件
+
+基于 https://github.com/zhuxiaojt/SLPlugin-yuanshen-splash 的启原插件修改
+
+--- 到此为止，下面是废案 ---
 
 ## 功能概述
 
